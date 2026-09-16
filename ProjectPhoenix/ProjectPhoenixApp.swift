@@ -12,9 +12,16 @@ import SwiftData
 struct ProjectPhoenixApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            WorkoutLog.self,
+            Exercise.self,
+            GuidanceTopic.self,
+            DietEntry.self,
+            Routine.self
         ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        let modelConfiguration = ModelConfiguration(
+            schema: schema,
+            isStoredInMemoryOnly: false
+        )
 
         do {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
